@@ -108,7 +108,7 @@ class Contour(Base):
         else:
             k  = np.ones(ij.shape[0])*self.image_k_position
             zs = self.annotation.contour_slice_zvals
-            return np.int32(np.c_[ij, k])
+            return np.c_[ij, k]
     
 Annotation.contours = relationship('Contour',
                                    order_by=Contour.id,
